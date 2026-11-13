@@ -1,14 +1,22 @@
 #include <iostream>
 #include "PressureSensor.h"
+#include "TemperatureSensor.h"
 
 int main() {
-    PressureSensor hydraulic("PRS-001");
+    PressureSensor pressureSensor("Hydraulic Pump Sensor 1");               //object in camel-case to follow C++ naming conventions.
+    TemperatureSensor temperatureSensor("Engine Temperature Sensor 1");
 
-    hydraulic.updateReading(50.0);
-    hydraulic.displayStatus();
+    pressureSensor.updateReading(50.0);
+    pressureSensor.displayStatus();
 
-    hydraulic.updateReading(150.0);
-    hydraulic.displayStatus();
+    pressureSensor.updateReading(150.0);
+    pressureSensor.displayStatus();
+
+    temperatureSensor.updateReading(25.0);
+    temperatureSensor.displayStatus();
+
+    temperatureSensor.updateReading(-25.0);
+    temperatureSensor.displayStatus();
 
     return 0;
 }
