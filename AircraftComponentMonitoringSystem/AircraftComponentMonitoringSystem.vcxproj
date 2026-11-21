@@ -141,16 +141,23 @@
   <ItemGroup>
     <ClCompile Include="AircraftComponent.cpp" />
     <ClCompile Include="AircraftComponentMonitoringSystem.cpp" />
+    <ClCompile Include="LandingGearCheckStrategy.cpp" />
     <ClCompile Include="LandingGearSensor.cpp" />
+    <ClCompile Include="PressureCheckStrategy.cpp" />
     <ClCompile Include="PressureSensor.cpp" />
+    <ClCompile Include="TemperatureCheckStrategy.cpp" />
     <ClCompile Include="TemperatureSensor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AircraftComponent.h" />
+    <ClInclude Include="ICheckStrategy.h" />
+    <ClInclude Include="LandingGearCheckStrategy.h" />
     <ClInclude Include="LandingGearSensor.h" />
     <ClInclude Include="Limits.h" />
+    <ClInclude Include="PressureCheckStrategy.h" />
     <ClInclude Include="PressureSensor.h" />
     <ClInclude Include="ReadingValue.h" />
+    <ClInclude Include="TemperatureCheckStrategy.h" />
     <ClInclude Include="TemperatureSensor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
