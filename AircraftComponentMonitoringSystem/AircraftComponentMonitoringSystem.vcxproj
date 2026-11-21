@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="AircraftComponent.cpp" />
     <ClCompile Include="AircraftComponentMonitoringSystem.cpp" />
+    <ClCompile Include="LandingGearSensor.cpp" />
     <ClCompile Include="PressureSensor.cpp" />
     <ClCompile Include="TemperatureSensor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AircraftComponent.h" />
+    <ClInclude Include="LandingGearSensor.h" />
     <ClInclude Include="Limits.h" />
     <ClInclude Include="PressureSensor.h" />
     <ClInclude Include="ReadingValue.h" />
