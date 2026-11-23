@@ -143,6 +143,7 @@
     <ClCompile Include="AircraftComponentMonitoringSystem.cpp" />
     <ClCompile Include="AlertService.cpp" />
     <ClCompile Include="CockpitAlert.cpp" />
+    <ClCompile Include="ComponentMonitor.cpp" />
     <ClCompile Include="ComponentRepository.cpp" />
     <ClCompile Include="LandingGearCheckStrategy.cpp" />
     <ClCompile Include="LandingGearSensor.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Alert.h" />
     <ClInclude Include="AlertService.h" />
     <ClInclude Include="CockpitAlert.h" />
+    <ClInclude Include="ComponentMonitor.h" />
     <ClInclude Include="ComponentRepository.h" />
     <ClInclude Include="IAlertChannel.h" />
     <ClInclude Include="ICheckStrategy.h" />

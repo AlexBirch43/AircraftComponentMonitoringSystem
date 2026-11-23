@@ -8,6 +8,7 @@
 #include "CockpitAlert.h"
 #include "MaintenancePanelAlert.h"
 #include "AlertService.h"
+#include "ComponentMonitor.h"
 
 int main() {
     ComponentRepository repository;
@@ -97,6 +98,39 @@ int main() {
     addedChannel = alertService.addChannel(std::make_unique<MaintenancePanelAlert>());   // test adding the second channel
     std::cout << "Add maintenance panel channel: " << (addedChannel ? "channel added" : "channel rejected") << '\n';
     alertService.sendAlert(testAlert);
+
+
+    // tests for component monitor
+    std::cout << "\nComponent monitor tests\n";
+    ComponentRepository monitoredComponents;                                         // fresh repository for the monitor to check
+    AlertService monitorAlerts;                                                      // fresh alert service for the monitor to use
+    monitorAlerts.addChannel(std::make_unique<CockpitAlert>());
+    monitorAlerts.addChannel(std::make_unique<MaintenancePanelAlert>());
+    ComponentMonitor monitor(monitoredComponents, monitorAlerts);                    // create the monitor, linked to both 
+
+    std::cout << "Empty repository:\n";                                              // test running checks with no components
+    int raised = monitor.runChecks();
+    std::cout << "Alerts raised: " << raised << '\n';
+
+    monitoredComponents.addComponent(std::make_unique<PressureSensor>("Hydraulic Pump Sensor 1"));
+    monitoredComponents.addComponent(std::make_unique<TemperatureSensor>("Engine Temperature Sensor 1"));
+    monitoredComponents.addComponent(std::make_unique<LandingGearSensor>("Landing Gear Sensor 1"));
+
+    monitoredComponents.findComponent("Hydraulic Pump Sensor 1")->updateReading(50.0);
+    monitoredComponents.findComponent("Engine Temperature Sensor 1")->updateReading(25.0);
+    monitoredComponents.findComponent("Landing Gear Sensor 1")->updateReading("DOWN");
+
+    std::cout << "All readings normal:\n";                                           // test with every component healthy
+    raised = monitor.runChecks();
+    std::cout << "Alerts raised: " << raised << '\n';
+
+    monitoredComponents.findComponent("Hydraulic Pump Sensor 1")->updateReading(150.0);
+	monitoredComponents.findComponent("Engine Temperature Sensor 1")->updateReading(-25.0);
+    monitoredComponents.findComponent("Landing Gear Sensor 1")->updateReading("JAMMED");
+
+    std::cout << "Pressure high, temp low and landing gear jammed:\n";               // test with 3 faulty components
+    raised = monitor.runChecks();
+    std::cout << "Alerts raised: " << raised << '\n';
 
     return 0;
 }
