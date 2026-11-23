@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="AircraftComponent.cpp" />
     <ClCompile Include="AircraftComponentMonitoringSystem.cpp" />
+    <ClCompile Include="ComponentRepository.cpp" />
     <ClCompile Include="LandingGearCheckStrategy.cpp" />
     <ClCompile Include="LandingGearSensor.cpp" />
     <ClCompile Include="PressureCheckStrategy.cpp" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AircraftComponent.h" />
+    <ClInclude Include="ComponentRepository.h" />
     <ClInclude Include="ICheckStrategy.h" />
     <ClInclude Include="LandingGearCheckStrategy.h" />
     <ClInclude Include="LandingGearSensor.h" />

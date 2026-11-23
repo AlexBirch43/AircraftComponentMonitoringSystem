@@ -39,6 +39,9 @@
     <ClCompile Include="LandingGearCheckStrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ComponentRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Limits.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LandingGearCheckStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentRepository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
