@@ -141,9 +141,12 @@
   <ItemGroup>
     <ClCompile Include="AircraftComponent.cpp" />
     <ClCompile Include="AircraftComponentMonitoringSystem.cpp" />
+    <ClCompile Include="AlertService.cpp" />
+    <ClCompile Include="CockpitAlert.cpp" />
     <ClCompile Include="ComponentRepository.cpp" />
     <ClCompile Include="LandingGearCheckStrategy.cpp" />
     <ClCompile Include="LandingGearSensor.cpp" />
+    <ClCompile Include="MaintenancePanelAlert.cpp" />
     <ClCompile Include="PressureCheckStrategy.cpp" />
     <ClCompile Include="PressureSensor.cpp" />
     <ClCompile Include="TemperatureCheckStrategy.cpp" />
@@ -151,11 +154,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AircraftComponent.h" />
+    <ClInclude Include="Alert.h" />
+    <ClInclude Include="AlertService.h" />
+    <ClInclude Include="CockpitAlert.h" />
     <ClInclude Include="ComponentRepository.h" />
+    <ClInclude Include="IAlertChannel.h" />
     <ClInclude Include="ICheckStrategy.h" />
     <ClInclude Include="LandingGearCheckStrategy.h" />
     <ClInclude Include="LandingGearSensor.h" />
     <ClInclude Include="Limits.h" />
+    <ClInclude Include="MaintenancePanelAlert.h" />
     <ClInclude Include="PressureCheckStrategy.h" />
     <ClInclude Include="PressureSensor.h" />
     <ClInclude Include="ReadingValue.h" />
